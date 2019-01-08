@@ -63,12 +63,12 @@ class Timeseries:
             session.close()
 
     def create_timeseries_id(self, run_name, station, variable, unit, event_type, source):
-        tms_meta = {'station': station['name'],
+        tms_meta = {'station_name': station['name'],
                     'variable': variable['name'],
                     'unit': unit['name'],
-                    'type': event_type['name'],
+                    'event_type': event_type['name'],
                     'source': source['name'],
-                    'name': run_name}
+                    'run_name': run_name}
         tms_id = Timeseries.generate_timeseries_id(tms_meta)
         run = Run(id=tms_id,
                   name=run_name,
